@@ -4,5 +4,4 @@
 --without-system-nspr
 --without-system-icu
 --without-intl-api
-
-
+--program-suffix=45

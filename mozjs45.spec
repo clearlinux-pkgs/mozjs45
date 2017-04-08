@@ -4,7 +4,7 @@
 #
 Name     : mozjs45
 Version  : 45.0.2
-Release  : 6
+Release  : 7
 URL      : https://people-mozilla.org/~sfink/mozjs-45.0.2.tar.bz2
 Source0  : https://people-mozilla.org/~sfink/mozjs-45.0.2.tar.bz2
 Summary  : A small but fast and easy to use stand-alone template engine written in pure python.
@@ -88,19 +88,20 @@ dev components for the mozjs45 package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1491677477
+export SOURCE_DATE_EPOCH=1491679933
 pushd js/src
 %configure --disable-static --with-x \
 --with-system-zlib \
 --enable-system-ffi \
 --without-system-nspr \
 --without-system-icu \
---without-intl-api
+--without-intl-api \
+--program-suffix=45
 make V=1  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1491677477
+export SOURCE_DATE_EPOCH=1491679933
 rm -rf %{buildroot}
 pushd js/src
 %make_install
