@@ -1,0 +1,8 @@
+--with-x
+--with-system-zlib
+--enable-system-ffi
+--without-system-nspr
+--without-system-icu
+--without-intl-api
+
+

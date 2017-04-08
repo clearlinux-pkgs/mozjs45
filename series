@@ -1,0 +1,4 @@
+bug1329272.patch
+install-copy-files.patch
+link-mozglue.patch
+pytest.patch

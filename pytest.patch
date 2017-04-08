@@ -1,0 +1,11 @@
+--- mozjs-45.0.2/Makefile.in~	2016-04-14 17:55:16.000000000 +0000
++++ mozjs-45.0.2/Makefile.in	2017-04-08 18:22:29.063646494 +0000
+@@ -86,6 +86,7 @@
+ ifndef TEST_MOZBUILD
+ backend.RecursiveMakeBackend:
+ 	@echo 'Build configuration changed. Regenerating backend.'
++	_virtualenv/lib/python2.7/_weakrefset.py || :
++# 	$(PYTHON) config.status
+-	$(PYTHON) config.status
+ 
+ Makefile: backend.RecursiveMakeBackend

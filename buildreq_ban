@@ -1,0 +1,21 @@
+# This file contains build requirements that get picked up but are
+# undesirable. One entry per line, no whitespace.
+blessings
+docopt
+furl
+jsmin
+jsonschema
+lockfile
+markupsafe
+mozfile
+mozinfo
+mozlog
+mozprocess
+pyasn1
+python-dateutil
+redo
+requests
+simplejson
+sqlalchemy
+twisted
+vcversioner
