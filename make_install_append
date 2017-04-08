@@ -1,0 +1,3 @@
+mv %{buildroot}/usr/bin/js %{buildroot}/usr/bin/js45
+mv %{buildroot}/usr/bin/js-config %{buildroot}/usr/bin/js45-config
+mv %{buildroot}/usr/lib64/pkgconfig/js.pc %{buildroot}/usr/lib64/pkgconfig/mozjs45.pc

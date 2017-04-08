@@ -4,7 +4,7 @@
 #
 Name     : mozjs45
 Version  : 45.0.2
-Release  : 7
+Release  : 8
 URL      : https://people-mozilla.org/~sfink/mozjs-45.0.2.tar.bz2
 Source0  : https://people-mozilla.org/~sfink/mozjs-45.0.2.tar.bz2
 Summary  : A small but fast and easy to use stand-alone template engine written in pure python.
@@ -88,7 +88,7 @@ dev components for the mozjs45 package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1491679933
+export SOURCE_DATE_EPOCH=1491680445
 pushd js/src
 %configure --disable-static --with-x \
 --with-system-zlib \
@@ -101,11 +101,16 @@ make V=1  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1491679933
+export SOURCE_DATE_EPOCH=1491680445
 rm -rf %{buildroot}
 pushd js/src
 %make_install
 popd
+## make_install_append content
+mv %{buildroot}/usr/bin/js %{buildroot}/usr/bin/js45
+mv %{buildroot}/usr/bin/js-config %{buildroot}/usr/bin/js45-config
+mv %{buildroot}/usr/lib64/pkgconfig/js.pc %{buildroot}/usr/lib64/pkgconfig/mozjs45.pc
+## make_install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -113,8 +118,8 @@ popd
 
 %files bin
 %defattr(-,root,root,-)
-/usr/bin/js
-/usr/bin/js-config
+/usr/bin/js45
+/usr/bin/js45-config
 
 %files dev
 %defattr(-,root,root,-)
@@ -262,4 +267,4 @@ popd
 /usr/include/mozjs-45/mozmemory.h
 /usr/include/mozjs-45/mozmemory_wrap.h
 /usr/lib64/libmozjs-45.so
-/usr/lib64/pkgconfig/js.pc
+/usr/lib64/pkgconfig/mozjs45.pc
