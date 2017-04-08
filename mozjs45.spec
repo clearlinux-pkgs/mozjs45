@@ -4,12 +4,12 @@
 #
 Name     : mozjs45
 Version  : 45.0.2
-Release  : 5
+Release  : 6
 URL      : https://people-mozilla.org/~sfink/mozjs-45.0.2.tar.bz2
 Source0  : https://people-mozilla.org/~sfink/mozjs-45.0.2.tar.bz2
 Summary  : A small but fast and easy to use stand-alone template engine written in pure python.
 Group    : Development/Tools
-License  : Apache-2.0 BSD-2-Clause BSD-3-Clause BSD-3-Clause-Clear GPL-2.0 LGPL-2.0 LGPL-2.1 MIT MPL-2.0 MPL-2.0-no-copyleft-exception PSF-2+ Python-2.0 The ZPL-2.1
+License  : Apache-2.0 BSD-2-Clause BSD-3-Clause BSD-3-Clause-Clear GPL-2.0 LGPL-2.0 LGPL-2.1 MIT MPL-2.0 MPL-2.0-no-copyleft-exception Python-2.0 ZPL-2.1
 Requires: mozjs45-bin
 Requires: Babel
 Requires: Jinja2
@@ -88,7 +88,7 @@ dev components for the mozjs45 package.
 
 %build
 export LANG=C
-export SOURCE_DATE_EPOCH=1491676942
+export SOURCE_DATE_EPOCH=1491677477
 pushd js/src
 %configure --disable-static --with-x \
 --with-system-zlib \
@@ -100,7 +100,7 @@ make V=1  %{?_smp_mflags}
 popd
 
 %install
-export SOURCE_DATE_EPOCH=1491676942
+export SOURCE_DATE_EPOCH=1491677477
 rm -rf %{buildroot}
 pushd js/src
 %make_install
